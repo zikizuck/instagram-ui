@@ -1,22 +1,13 @@
-//
-//.cards{
-//  width: 100%;
-//
-//}
-//.postTags{
-//  display: flex;
-//  flex-direction: row;
-//justify-content: space-around}
-//
-//.container{
-//  border: 1px solid red;
-//
-//}
+
 .container {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  //padding-top: 30px;
+  //padding-bottom: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 100%;
+  //width: 100%;
+}
+.loading {
+  position: relative;
+  top: 40px;
 }

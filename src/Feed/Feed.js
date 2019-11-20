@@ -20,12 +20,17 @@ class Feed extends Component {
 
     }
 
+
     componentDidMount() {
+        this.setState({loading: true});
         fetch('https://my-json-server.typicode.com/evyros/fake-api/posts')
             .then(res => res.json())
             .then(posts => {
                 this.setState({posts});
                 console.log(posts);
+
+                this.setState({posts,loading:false})
+
             });
 
 
@@ -50,6 +55,8 @@ class Feed extends Component {
             return time;
 
         }
+        // setTimeout(() => {}, 5000);
+
 
 
         return (
@@ -82,11 +89,10 @@ class Feed extends Component {
                                     likes={post.likes}
                                     key={post.id}
                                     userId={post.userId}
+                                    tags={post.tags}
                                     >
 
-                                <div className="postTags">{post.tags.map(tag=>{
-                                    return (<span >#{tag}  </span>);
-                                })}</div>
+
                             </Post>
 
                         );

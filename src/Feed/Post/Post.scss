@@ -1,64 +1,111 @@
 
-.card {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-  //text-align: center;
-  width: 33%;
-  overflow: hidden;
-  height: fit-content;
-  //box-shadow: 0px 4px 8 px 0px ;
+@import url('https://fonts.googleapis.com/css?family=Cormorant+SC&display=swap');
 
-  .header{
-    display: flex;
-    justify-content: space-evenly;
+.card {
+  margin: 10px;
+  width: 18rem;
+  overflow: hidden;
+  box-shadow: 2px 4px 9px 2px grey;
+
+  .card-header{
 
   }
 
-  .main{
-    height: 25%;
+  .card-text{
+    font-family: "Comic Sans MS";
+    margin-left: 5px;
 
 
+  }
+
+  .userId{
+    text-align: left;
+  }
+
+  .cardDate{
+    text-align: right;
+  }
+
+  .userImage{
+    overflow: hidden;
+    align-items: center;
+    height: 210px;
+    transition-duration: 0.1s;
+    width:100%;
+
+    :hover{
+      transform:scale(1.5);
+    }
 
     img {
-      display: flex;
       align-items: center;
-      width: 100%;
       overflow: hidden;
       border-radius: 3px;
-      box-sizing: border-box;
-      //width: 100%;
-      //vertical-align: middle;
-      ////height: 200px;
+      width: 130%;
+      bottom: 0px;
+
     }
+
 
   }
-  .footer{
+
+  .card-body{
+    font-family: "Comic Sans MS";
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 15pxs;
 
-    h5{
-      font-family: "Comic Sans MS";
-      text-align: left
-    }
-
-    p{
+    .like{
       text-align: right;
     }
 
-    .tags{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    .heart:hover{
+      color:red;
     }
+  }
+
+  .card-title{
+    text-align: left;
+  }
+
+  .card-footer{
+    background-color:initial;
+    width: 100%;
+  }
 
   }
 
+  //.footer{
+  //  display: flex;
+  //  flex-wrap: wrap;
+  //
+  //  h5{
+  //    font-family: "Comic Sans MS";
+  //    text-align: left
+  //  }
+  //
+  //  p{
+  //    text-align: right;
+  //  }
+  //
+  //  .tags{
+  //    display: flex;
+  //    flex-wrap: wrap;
+  //    justify-content: center;
+  //  }
+  //
+  //  .card-footer{
+  //    width: 100%;
+  //  }
+  //
+  //}
 
 
 
 
-}
+
+
 
 .postView{
   //border: 1px solid black;

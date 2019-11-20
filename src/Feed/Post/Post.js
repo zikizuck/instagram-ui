@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './Post.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarAlt, faUserFriends,faHeart,faUserAlt } from '@fortawesome/free-solid-svg-icons'
+import TagList from "./TagList/TagList";
 class Post extends Component {
     constructor(props) {
         super(props);
@@ -14,24 +15,32 @@ class Post extends Component {
     render() {
 
         return (
-           <div className="card">
+            <div className="d-flex">
+                <div className="card" >
+                    <div className="card-header">
+                        <span className="cardDate">
+                            {<FontAwesomeIcon icon={ faCalendarAlt } />}
+                            <span className="card-text">{this.props.created}</span>
 
-                   <header className="header">
-                       <div>{<FontAwesomeIcon icon={ faUserAlt } />}{this.props.userId}</div>
-                       <div>{<FontAwesomeIcon icon={ faCalendarAlt } />}{this.props.created}</div>
-                   </header>
-                   <main className="main">
-                       <div ><img  src={this.props.image} alt="post-image"/></div>
-                   </main>
-                   <footer className="footer">
-                       <h5 key={this.props.id}>{this.props.title}</h5>
-                       <p>{<FontAwesomeIcon icon={ faHeart } />}Likes:{this.props.likes}</p>
-                       <div className="tags">{this.props.children}</div>
-                   </footer>
+                        </span>
+                        <div className="userId">{<FontAwesomeIcon icon={ faUserAlt } />}{this.props.userId}</div>
 
+                    </div>
+                    <div className="userImage">
+                        <img src={this.props.image} alt="post-image" className="card-img-top" />
 
+                    </div>
+                    <div className="card-body">
+                        <div><h5 key={this.props.id} className="card-title">{this.props.title}</h5></div>
+                        <div className="like"><p  className="card-text">{<FontAwesomeIcon className="heart" icon={ faHeart } />}{this.props.likes}</p></div>
 
-           </div>
+                        <footer className="card-footer">
+                            <TagList tags={this.props.tags}/>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+
 
         );
     }
