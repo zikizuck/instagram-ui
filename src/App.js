@@ -25,6 +25,7 @@ function App() {
                        <About/>
                     </Route>
                     <Route path="/">
+
                         <Feed />
                     </Route>
 
