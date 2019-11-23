@@ -1,1 +1,10 @@
-{"version":3,"sourceRoot":"","sources":["Header.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;EACA;;;AAEF;EACE;EACA","file":"Header.css"}
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "Header.scss"
+  ],
+  "names": [],
+  "mappings": "AAAA;EACE;EACA;EACA;EACA;;;AAEF;EACE;EACA",
+  "file": "Header.css"
+}

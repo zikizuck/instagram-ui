@@ -1,4 +1,5 @@
 {
+  "homepage": "http://zikizuck.github.io/instagram-ui",
   "name": "instagram-ui",
   "version": "0.1.0",
   "private": true,
@@ -16,6 +17,8 @@
     "react-spinners": "^0.6.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -39,6 +42,7 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "devDependencies": {
+    "gh-pages": "^2.1.1",
     "node-sass": "^4.13.0"
   },
   "author": "",
