@@ -7,9 +7,9 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+
 } from "react-router-dom";
-import About from "./About/About";
+import CreatePost from "./CreatePost/CreatePost";
 
 function App() {
   return (
@@ -21,8 +21,8 @@ function App() {
                     <Route path="/profile">
                         <Profile/>
                     </Route>
-                    <Route path="/about">
-                       <About/>
+                    <Route path="/post/create">
+                       <CreatePost/>
                     </Route>
                     <Route path="/">
 

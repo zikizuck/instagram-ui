@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Post.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarAlt, faUserFriends,faHeart,faUserAlt } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarAlt,faHeart,faUserAlt } from '@fortawesome/free-solid-svg-icons'
 import TagList from "./TagList/TagList";
 class Post extends Component {
     constructor(props) {
