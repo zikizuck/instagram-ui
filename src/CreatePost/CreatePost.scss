@@ -1,22 +1,101 @@
-.form-box{
-  //border: 1px solid blue;
-  width: fit-content ;
+.CreatePost {
+
+  h2 {
+    padding: 10px 0;
+    margin-bottom: 25px;
+    font-size: 18px;
+  }
+
+  [type="file"] {
+    height: 0;
+    overflow: hidden;
+    width: 0;
+  }
+
+  [type="file"] + label {
+    background: #dd4555;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: inherit;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    outline: none;
+    padding: 1rem 50px;
+    position: relative;
+    transition: all 0.3s;
+    vertical-align: middle;
+
+    svg {
+      margin-right: 5px;
+    }
+
+    &:hover {
+      background-color: darken(#f54555, 10%);
+    }
+
+    &.upload-button {
+      background-color: #f54555;
+      box-shadow: 0 6px darken(#f54555, 10%);
+      transition: none;
+
+      &:hover {
+        box-shadow: 0 4px darken(#f54555, 10%);
+        top: 2px;
+      }
+    }
+  }
+
+  .tags-wrapper {
+
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+
+    .react-tagsinput-input {
+      box-shadow: none;
+      border: 0;
+      padding: 0;
+      margin: 7px;
+      &:hover, &:focus, &:active {
+        outline: 0;
+      }
+    }
+
+    .react-tagsinput-tag {
+      display: inline-block;
+      color: #ffffff;
+      background: #5798ff;
+      margin: 5px;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+  }
 }
 
-.form-group{
-  color: blue;
-
-
-}
-
-.form-control{
-  background-color: #bfbec342;
-  border-color: blue;
-  box-shadow: 2px 2px 0px 1px grey inset;
-  width: fit-content;
-}
-
-.btn .btn-primary{
-  box-shadow: 2px 4px 9px 2px grey;
-
-}
+//.form-box{
+//  //border: 1px solid blue;
+//  width: fit-content ;
+//}
+//
+//.form-group{
+//  color: blue;
+//
+//
+//}
+//
+//.form-control{
+//  background-color: #bfbec342;
+//  border-color: blue;
+//  box-shadow: 2px 2px 0px 1px grey inset;
+//  width: fit-content;
+//}
+//
+//.btn .btn-primary{
+//  box-shadow: 2px 4px 9px 2px grey;
+//
+//}

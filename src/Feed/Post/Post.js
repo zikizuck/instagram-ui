@@ -1,8 +1,12 @@
 import React, {Component} from 'react';
 import './Post.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarAlt,faHeart,faUserAlt } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarAlt,faHeart,faUserAlt,faCommentDots } from '@fortawesome/free-solid-svg-icons'
 import TagList from "./TagList/TagList";
+import config from '../../config';
+
+
+
 class Post extends Component {
     constructor(props) {
         super(props);
@@ -30,15 +34,18 @@ class Post extends Component {
                             <span className="card-text">{(this.props.created)}</span>
 
                         </span>
-                        <div className="userId">{<FontAwesomeIcon icon={ faUserAlt } />}{this.props.userId}</div>
+                        <div className="userId">{<FontAwesomeIcon icon={ faUserAlt } />}{this.props.user}</div>
 
                     </div>
                     <div className="userImage">
-                        <img src={this.props.image} alt="post-image" className="card-img-top" />
+                        <img src={config.apiUrl + '/' +this.props.image} alt="post-image" className="card-img-top" />
 
                     </div>
                     <div className="card-body">
-                        <div><h5 key={this.props.id} className="card-title">{this.props.title}</h5></div>
+                        <div>
+                            <h4>about{this.props.about}</h4>
+                            <h5 key={this.props.id} className="card-title">{<FontAwesomeIcon icon={ faCommentDots } />}{this.props.title}</h5>
+                        </div>
                         <div className="like"><p  className="card-text">{<FontAwesomeIcon
                             className={cls}
                             icon={ faHeart }

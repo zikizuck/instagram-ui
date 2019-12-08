@@ -3,10 +3,10 @@ import Post from "./Post/Post";
 import './Feed.scss';
 import { GridLoader } from 'react-spinners';
 import { css } from '@emotion/core';
-
 import TagList from "./Post/TagList/TagList";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHashtag, faUserFriends } from '@fortawesome/free-solid-svg-icons';
+import config from "../config";
 
 
 class Feed extends Component {
@@ -23,7 +23,7 @@ class Feed extends Component {
 
     componentDidMount() {
         this.setState({loading: true});
-        fetch('https://my-json-server.typicode.com/evyros/fake-api/posts')
+        fetch(config.apiUrl + '/api/posts')
             .then(res => res.json())
             .then(posts => {
                 this.setState({posts});
@@ -36,6 +36,12 @@ class Feed extends Component {
 
 
     }
+    formatDate(dateStr) {
+        const date = new Date(dateStr);
+        const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        return months[date.getMonth()] + ' ' + date.getDate()+ ' '+ date.getFullYear();
+    };
+
 
 
     render() {
@@ -44,20 +50,6 @@ class Feed extends Component {
             margin: 0 auto;
             border-color:#5798ff;
         `;
-        function timeConverter(UNIX_timestamp) {
-            let a = new Date(UNIX_timestamp * 1000);
-            let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-            let year = a.getFullYear();
-            let month = months[a.getMonth()];
-            let date = a.getDate();
-
-            let time = `${date} ${month} ${year}`;
-            return time;
-
-        }
-        // setTimeout(() => {}, 5000);
-
-
 
         return (
 
@@ -85,11 +77,12 @@ class Feed extends Component {
 
                             <Post   title={post.title}
                                     image={post.image}
-                                    created={timeConverter(post.created)}
+                                    created={this.formatDate(post.created)}
                                     likes={post.likes}
-                                    key={post.id}
-                                    userId={post.userId}
+                                    key={post._id}
+                                    user={post.user}
                                     tags={post.tags}
+                                    about={post.about}
                                     >
 
 

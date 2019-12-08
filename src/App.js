@@ -10,31 +10,43 @@ import {
 
 } from "react-router-dom";
 import CreatePost from "./CreatePost/CreatePost";
+import Register from "./Register/Register";
+import Login from "./Login/Login";
+import {Provider} from 'react-redux';
+import store from './store';
+import UserBox from "./Header/UserBox/UserBox";
 
 function App() {
   return (
-    <Router>
-        <div className="App">
-            <Header/>
-            <main>
-                <Switch>
-                    <Route path="/profile">
-                        <Profile/>
-                    </Route>
-                    <Route path="/post/create">
-                       <CreatePost/>
-                    </Route>
-                    <Route path="/">
+    <Provider store={store}>
+        <Router>
+            <div className="App">
+                <Header/>
+                <main>
+                    <Switch>
+                        <Route path="/profile">
+                            <Profile/>
+                        </Route>
+                        <Route path="/post/create">
+                            <CreatePost/>
+                        </Route>
+                        <Route path="/register">
+                            <Register/>
+                        </Route>
+                        <Route path="/login">
+                            <Login/>
+                        </Route>
+                        <Route path="/">
+                            <Feed />
+                        </Route>
 
-                        <Feed />
-                    </Route>
-
-                </Switch>
-            </main>
+                    </Switch>
+                </main>
 
 
-        </div>
-    </Router>
+            </div>
+        </Router>
+    </Provider>
   );
 }
 
