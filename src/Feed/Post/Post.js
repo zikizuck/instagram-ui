@@ -43,7 +43,7 @@ class Post extends Component {
                     </div>
                     <div className="card-body">
                         <div>
-                            <h4>about{this.props.about}</h4>
+                            <h4>{this.props.about}</h4>
                             <h5 key={this.props.id} className="card-title">{<FontAwesomeIcon icon={ faCommentDots } />}{this.props.title}</h5>
                         </div>
                         <div className="like"><p  className="card-text">{<FontAwesomeIcon

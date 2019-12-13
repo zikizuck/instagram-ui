@@ -35,23 +35,24 @@ class UserBox extends Component {
 
     render() {
         return (
-            <BrowserRouter>
+
                 <div>
-                    {this.state.user ? <span>{this.state.user.username}</span>
+                    {this.state.user ? <span>{this.state.user.username}<button onClick={this.logoutHandler.bind(this)}>Log Out</button></span>
+
 
                         : <div>
                             <Link to="/register">Register</Link>
                             <Link to="/login"><div>Login</div></Link>
                         </div>
                     }
-                    <div>
-                        <button onClick={this.logoutHandler.bind(this)}>Log Out</button>
+                    {/*<div>*/}
+                    {/*    <button onClick={this.logoutHandler.bind(this)}>Log Out</button>*/}
 
-                    </div>
+                    {/*</div>*/}
 
 
                 </div>
-            </BrowserRouter>
+
         );
     }
 }

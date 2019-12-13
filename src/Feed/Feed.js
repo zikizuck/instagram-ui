@@ -7,6 +7,7 @@ import TagList from "./Post/TagList/TagList";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHashtag, faUserFriends } from '@fortawesome/free-solid-svg-icons';
 import config from "../config";
+import ObjectId from 'bson-objectid';
 
 
 class Feed extends Component {
@@ -44,7 +45,10 @@ class Feed extends Component {
 
 
 
+
     render() {
+
+
         const override = css`
             display:block;
             margin: 0 auto;
@@ -80,7 +84,7 @@ class Feed extends Component {
                                     created={this.formatDate(post.created)}
                                     likes={post.likes}
                                     key={post._id}
-                                    user={post.user}
+                                    user={post.user.username}
                                     tags={post.tags}
                                     about={post.about}
                                     >

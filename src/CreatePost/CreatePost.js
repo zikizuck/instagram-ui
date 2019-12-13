@@ -48,7 +48,7 @@ class CreatePost extends Component {
         return (
             <div className="CreatePost">
                 <h2>Create Post</h2>
-                <Formik initialValues={{image: '', title: '', tags: []}}
+                <Formik initialValues={{image: '', about: '' ,title: '', tags: []}}
                         validationSchema={postModel}
                         onSubmit={this.submit.bind(this)}
                         render={({setFieldValue}) => {
@@ -66,6 +66,11 @@ class CreatePost extends Component {
                                     <div className="container-fluid row">
                                         <ErrorMessage className="alert alert-danger mt-2" name="image" component="div" />
                                     </div>
+                                </div>
+                                <div className="row form-group">
+                                    <label>About:</label>
+                                    <Field as="textarea" name="about" className="form-control" />
+                                    <ErrorMessage className="alert alert-danger mt-2" name="about" component="div" />
                                 </div>
                                 <div className="row form-group">
                                     <label>Title:</label>
